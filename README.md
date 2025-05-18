@@ -1,2 +1,2 @@
 # DOrSU_Voting_System
-voting system for students iin Davao Oriental State University
+voting system for students in Davao Oriental State University
