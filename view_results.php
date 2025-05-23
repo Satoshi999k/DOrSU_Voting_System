@@ -134,6 +134,7 @@ $result = $conn->query($sql);
     <div class="button-group">
         <a href="student_dashboard.php" class="header-button" style="background-color: #2980b9;">Home</a>
         <a href="cast_vote.php" class="header-button" style="background-color: #2980b9;">Vote</a>
+        <a href="chat_ui.php" class="header-button" style="background-color: #2980b9;">Support</a>
         <a href="logout.php" class="header-button">Logout</a>
     </div>
 </header>

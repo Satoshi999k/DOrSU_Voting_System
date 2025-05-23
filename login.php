@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'db.php';
+require 'db.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = $_POST['username'];
@@ -16,6 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         if ($password === $admin['password']) {
             $_SESSION['admin_user'] = $admin;
+            $_SESSION['admin_id'] = $admin['id'];
             header("Location: admin_dashboard.php");
             exit;
         } else {
@@ -35,6 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if (password_verify($password, $user['password'])) {
             $_SESSION['user'] = $user;
             $_SESSION['role'] = 'student';
+            $_SESSION['student_ID'] = $user['student_ID'];
             header("Location: student_dashboard.php");
             exit;
         } else {
@@ -78,19 +80,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             align-items: flex-start;
             gap: 20px;
         }
-
         .info-box {
             background-color: #1E88E5;
             color: white;
             padding: 20px;
-            border-right: 10px;
-            border-left: none;
             border-radius: 10px 0 0 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             width: 320px;
-            text-align: left;
             height: 284px;
-            margin-right: -20px;
         }
         .info-box h3 {
             margin-bottom: 20px;
@@ -112,13 +109,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         .login-container {
             background: rgba(255, 255, 255, 0.95);
             padding: 20px;
-            border-right: 10px;
-            border-left: none;
             border-radius: 0 10px 10px 0;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            text-align: left;
             width: 320px;
-            margin-bottom: 80px;
             height: 284px;
         }
         .login-container h2 {
@@ -162,7 +155,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </div>
     <div class="container">
         <div class="info-box">
-            <h3>DOrSU Student's Feedback</h3>
+            <h3>DOrSU Student's Voting System</h3>
             <hr>
             <p>Participate in the school voting system to make your voice heard and contribute to the selection of student leaders and representatives.</p>
         </div>

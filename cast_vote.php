@@ -221,6 +221,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <img src="image/dorsu.png" alt="Davao Oriental State University">
     <div class="button-group">
         <a href="student_dashboard.php" class="header-button" style="background-color: #2980b9;">Home</a>
+        <a href="chat_ui.php" class="header-button" style="background-color: #2980b9;">Support</a>
         <a href="view_results.php" class="header-button" style="background-color: #2980b9;">Results</a>
         <a href="logout.php" class="header-button">Logout</a>
     </div>
